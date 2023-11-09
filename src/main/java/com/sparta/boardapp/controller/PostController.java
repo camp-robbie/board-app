@@ -1,8 +1,10 @@
 package com.sparta.boardapp.controller;
 
+import com.sparta.boardapp.controller.exception.PostNotFoundException;
 import com.sparta.boardapp.dto.PostAddRequestDto;
 import com.sparta.boardapp.dto.PostResponseDto;
 import com.sparta.boardapp.dto.PostUpdateRequestDto;
+import com.sparta.boardapp.dto.exception.ErrorResponseDto;
 import com.sparta.boardapp.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -58,4 +60,14 @@ public class PostController {
         return ResponseEntity.noContent().build();
     }
 
+    @ExceptionHandler(PostNotFoundException.class)
+    public ResponseEntity<ErrorResponseDto> postNotFoundExceptionHandler(PostNotFoundException ex) {
+//        System.err.println(ex.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+                new ErrorResponseDto(
+                        HttpStatus.NOT_FOUND.value(),
+                        ex.getMessage()
+                )
+        );
+    }
 }
