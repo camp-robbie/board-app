@@ -4,10 +4,10 @@ import com.sparta.boardapp.controller.exception.PostNotFoundException;
 import com.sparta.boardapp.dto.PostAddRequestDto;
 import com.sparta.boardapp.dto.PostResponseDto;
 import com.sparta.boardapp.dto.PostUpdateRequestDto;
+import com.sparta.boardapp.controller.exception.AuthorizeException;
 import com.sparta.boardapp.entity.PostEntity;
 import com.sparta.boardapp.repository.PostJpaRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -59,7 +59,7 @@ public class PostService {
 
     private static void verifyPassword(PostEntity postEntity, String password) {
         if (!postEntity.passwordMatches(password)) {
-            throw new NullPointerException("비밀번호가 일치하지 않습니다.");
+            throw new AuthorizeException("비밀번호가 일치하지 않습니다.");
         }
     }
 }
