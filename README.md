@@ -1,5 +1,5 @@
 
-# Project Title
+## Project Intro
 스파르타 익명 게시판 API
 
 ## Tech Stack
@@ -33,6 +33,7 @@ Insert UseCase Or UseCase Diagram
 | `postId`        | `Long` | **Required**. 게시글 식별값 |
 
 ## ERD
+Insert ERD
 
 ## Running Tests
 To run tests, run the following command
