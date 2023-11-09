@@ -46,3 +46,12 @@ To run tests, run the following command
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Reference
+[REST Endpoint Design Examples](https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/)
+
+[Spotify Web API](https://developer.spotify.com/documentation/web-api/tutorials/getting-started)
+
+[URI Naming Conventions](https://restfulapi.net/resource-naming/)
+
+[Kakao REST API](https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide)
